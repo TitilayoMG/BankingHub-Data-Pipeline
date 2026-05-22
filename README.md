@@ -523,6 +523,8 @@ Both are many-to-one from the fact table to the dimension tables.
 ---
 
 ### Dashboard Layout
+* Dashboard
+![](bankinghub.png)
 
 The dashboard contains **4 KPI cards** and **4 charts**.
 
