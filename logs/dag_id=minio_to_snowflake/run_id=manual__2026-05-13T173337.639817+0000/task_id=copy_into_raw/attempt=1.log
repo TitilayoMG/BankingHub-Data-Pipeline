@@ -1,0 +1,55 @@
+[2026-05-13T17:34:49.094+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-05-13T17:34:49.119+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: minio_to_snowflake.copy_into_raw manual__2026-05-13T17:33:37.639817+00:00 [queued]>
+[2026-05-13T17:34:49.130+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: minio_to_snowflake.copy_into_raw manual__2026-05-13T17:33:37.639817+00:00 [queued]>
+[2026-05-13T17:34:49.131+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-05-13T17:34:49.147+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): copy_into_raw> on 2026-05-13 17:33:37.639817+00:00
+[2026-05-13T17:34:49.175+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'minio_to_snowflake', 'copy_into_raw', 'manual__2026-05-13T17:33:37.639817+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/load_to_snowflake.py', '--cfg-path', '/tmp/tmp5zr2b7uk']
+[2026-05-13T17:34:49.183+0000] {standard_task_runner.py:105} INFO - Job 23: Subtask copy_into_raw
+[2026-05-13T17:34:49.185+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=5739) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-05-13T17:34:49.187+0000] {standard_task_runner.py:72} INFO - Started process 5748 to run task
+[2026-05-13T17:34:49.312+0000] {task_command.py:467} INFO - Running <TaskInstance: minio_to_snowflake.copy_into_raw manual__2026-05-13T17:33:37.639817+00:00 [running]> on host f29c735a189b
+[2026-05-13T17:34:49.497+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='minio_to_snowflake' AIRFLOW_CTX_TASK_ID='copy_into_raw' AIRFLOW_CTX_EXECUTION_DATE='2026-05-13T17:33:37.639817+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-13T17:33:37.639817+00:00'
+[2026-05-13T17:34:49.501+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-05-13T17:34:49.561+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2026-05-13T17:34:49.565+0000] {connection.py:626} INFO - Snowflake Connector for Python Version: 4.5.0, Python Version: 3.12.9, Platform: Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2026-05-13T17:34:49.568+0000] {connection.py:1735} INFO - Connecting to GLOBAL Snowflake domain
+[2026-05-13T17:34:59.903+0000] {sql.py:511} INFO - Running statement: COPY INTO RAW.CUSTOMERS
+        FROM @BANKING_STAGE/customers
+        FILE_FORMAT = (TYPE = PARQUET)
+        MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
+        PATTERN='.*\.parquet'
+        ON_ERROR = SKIP_FILE;, parameters: None
+[2026-05-13T17:35:01.997+0000] {sql.py:520} INFO - Rows affected: 3
+[2026-05-13T17:35:01.999+0000] {snowflake.py:477} INFO - Rows affected: 3
+[2026-05-13T17:35:02.001+0000] {snowflake.py:478} INFO - Snowflake query id: 01c4585f-000c-c412-0000-8705000156e6
+[2026-05-13T17:35:02.992+0000] {logging_mixin.py:190} INFO - Loaded customers into RAW.CUSTOMERS
+[2026-05-13T17:35:02.998+0000] {connection.py:626} INFO - Snowflake Connector for Python Version: 4.5.0, Python Version: 3.12.9, Platform: Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2026-05-13T17:35:03.001+0000] {connection.py:1735} INFO - Connecting to GLOBAL Snowflake domain
+[2026-05-13T17:35:06.270+0000] {sql.py:511} INFO - Running statement: COPY INTO RAW.ACCOUNT
+        FROM @BANKING_STAGE/account
+        FILE_FORMAT = (TYPE = PARQUET)
+        MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
+        PATTERN='.*\.parquet'
+        ON_ERROR = SKIP_FILE;, parameters: None
+[2026-05-13T17:35:07.171+0000] {sql.py:520} INFO - Rows affected: 13
+[2026-05-13T17:35:07.174+0000] {snowflake.py:477} INFO - Rows affected: 13
+[2026-05-13T17:35:07.176+0000] {snowflake.py:478} INFO - Snowflake query id: 01c4585f-000c-c412-0000-8705000156f2
+[2026-05-13T17:35:08.851+0000] {logging_mixin.py:190} INFO - Loaded account into RAW.ACCOUNT
+[2026-05-13T17:35:08.854+0000] {connection.py:626} INFO - Snowflake Connector for Python Version: 4.5.0, Python Version: 3.12.9, Platform: Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2026-05-13T17:35:08.855+0000] {connection.py:1735} INFO - Connecting to GLOBAL Snowflake domain
+[2026-05-13T17:35:10.949+0000] {sql.py:511} INFO - Running statement: COPY INTO RAW.TRANSACTIONS
+        FROM @BANKING_STAGE/transactions
+        FILE_FORMAT = (TYPE = PARQUET)
+        MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
+        PATTERN='.*\.parquet'
+        ON_ERROR = SKIP_FILE;, parameters: None
+[2026-05-13T17:35:13.245+0000] {sql.py:520} INFO - Rows affected: 62
+[2026-05-13T17:35:13.247+0000] {snowflake.py:477} INFO - Rows affected: 62
+[2026-05-13T17:35:13.249+0000] {snowflake.py:478} INFO - Snowflake query id: 01c4585f-000c-c412-0000-8705000156fa
+[2026-05-13T17:35:15.266+0000] {logging_mixin.py:190} INFO - Loaded transactions into RAW.TRANSACTIONS
+[2026-05-13T17:35:15.269+0000] {python.py:240} INFO - Done. Returned value was: None
+[2026-05-13T17:35:15.288+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-05-13T17:35:15.290+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=minio_to_snowflake, task_id=copy_into_raw, run_id=manual__2026-05-13T17:33:37.639817+00:00, execution_date=20260513T173337, start_date=20260513T173449, end_date=20260513T173515
+[2026-05-13T17:35:15.349+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-05-13T17:35:15.365+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-13T17:35:15.369+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

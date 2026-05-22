@@ -1,0 +1,74 @@
+[2026-05-14T14:23:47.513+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-05-14T14:23:47.541+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: banking_datastack_pipeline.dbt_transformations manual__2026-05-14T14:22:54.732768+00:00 [queued]>
+[2026-05-14T14:23:47.556+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: banking_datastack_pipeline.dbt_transformations manual__2026-05-14T14:22:54.732768+00:00 [queued]>
+[2026-05-14T14:23:47.557+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-05-14T14:23:47.577+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): dbt_transformations> on 2026-05-14 14:22:54.732768+00:00
+[2026-05-14T14:23:47.592+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'banking_datastack_pipeline', 'dbt_transformations', 'manual__2026-05-14T14:22:54.732768+00:00', '--job-id', '49', '--raw', '--subdir', 'DAGS_FOLDER/bankinghub_dag.py', '--cfg-path', '/tmp/tmpkkru2u__']
+[2026-05-14T14:23:47.596+0000] {standard_task_runner.py:105} INFO - Job 49: Subtask dbt_transformations
+[2026-05-14T14:23:47.596+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=5503) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-05-14T14:23:47.597+0000] {standard_task_runner.py:72} INFO - Started process 5507 to run task
+[2026-05-14T14:23:47.691+0000] {task_command.py:467} INFO - Running <TaskInstance: banking_datastack_pipeline.dbt_transformations manual__2026-05-14T14:22:54.732768+00:00 [running]> on host 0bc8e9923f1f
+[2026-05-14T14:23:47.829+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='banking_datastack_pipeline' AIRFLOW_CTX_TASK_ID='dbt_transformations' AIRFLOW_CTX_EXECUTION_DATE='2026-05-14T14:22:54.732768+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-14T14:22:54.732768+00:00'
+[2026-05-14T14:23:47.832+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-05-14T14:23:47.853+0000] {dbt_layers.py:136} INFO - Running dbt run for staging
+[2026-05-14T14:24:10.290+0000] {dbt_layers.py:111} INFO - [0m14:23:50  Running with dbt=1.11.9
+[0m14:23:52  Registered adapter: snowflake=1.11.4
+[0m14:23:52  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.banking_dbt.example
+[0m14:23:52  Found 2 snapshots, 6 models, 3 sources, 525 macros
+[0m14:23:52  
+[0m14:23:52  Concurrency: 4 threads (target='dev')
+[0m14:23:52  
+[0m14:24:01  1 of 3 START sql view model analytics.stg_account .............................. [RUN]
+[0m14:24:01  2 of 3 START sql view model analytics.stg_customers ............................ [RUN]
+[0m14:24:01  3 of 3 START sql view model analytics.stg_transactions ......................... [RUN]
+[0m14:24:04  1 of 3 OK created sql view model analytics.stg_account ......................... [[32mSUCCESS 1[0m in 2.17s]
+[0m14:24:04  2 of 3 OK created sql view model analytics.stg_customers ....................... [[32mSUCCESS 1[0m in 2.17s]
+[0m14:24:04  3 of 3 OK created sql view model analytics.stg_transactions .................... [[32mSUCCESS 1[0m in 2.32s]
+[0m14:24:05  
+[0m14:24:05  Finished running 3 view models in 0 hours 0 minutes and 12.32 seconds (12.32s).
+[0m14:24:05  
+[0m14:24:05  [32mCompleted successfully[0m
+[0m14:24:05  
+[0m14:24:05  Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+
+[2026-05-14T14:24:10.291+0000] {dbt_layers.py:136} INFO - Running dbt snapshot for snapshots
+[2026-05-14T14:24:21.577+0000] {dbt_layers.py:111} INFO - [0m14:24:13  Running with dbt=1.11.9
+[0m14:24:14  Registered adapter: snowflake=1.11.4
+[0m14:24:15  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.banking_dbt.example
+[0m14:24:15  Found 2 snapshots, 6 models, 3 sources, 525 macros
+[0m14:24:15  The selection criterion 'snapshots' does not match any enabled nodes
+[0m14:24:15  Nothing to do. Try checking your model configs and model specification args
+
+[2026-05-14T14:24:21.578+0000] {dbt_layers.py:136} INFO - Running dbt run for marts
+[2026-05-14T14:24:44.599+0000] {dbt_layers.py:111} INFO - [0m14:24:24  Running with dbt=1.11.9
+[0m14:24:25  Registered adapter: snowflake=1.11.4
+[0m14:24:26  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.banking_dbt.example
+[0m14:24:26  Found 2 snapshots, 6 models, 3 sources, 525 macros
+[0m14:24:26  
+[0m14:24:26  Concurrency: 4 threads (target='dev')
+[0m14:24:26  
+[0m14:24:33  1 of 3 START sql table model analytics.dim_account ............................. [RUN]
+[0m14:24:33  2 of 3 START sql table model analytics.dim_customers ........................... [RUN]
+[0m14:24:33  3 of 3 START sql incremental model analytics.fct_transactions .................. [RUN]
+[0m14:24:34  1 of 3 OK created sql table model analytics.dim_account ........................ [[32mSUCCESS 140[0m in 1.10s]
+[0m14:24:34  2 of 3 OK created sql table model analytics.dim_customers ...................... [[32mSUCCESS 70[0m in 1.09s]
+[0m14:24:38  3 of 3 OK created sql incremental model analytics.fct_transactions ............. [[32mSUCCESS 200[0m in 4.62s]
+[0m14:24:41  
+[0m14:24:41  Finished running 1 incremental model, 2 table models in 0 hours 0 minutes and 15.03 seconds (15.03s).
+[0m14:24:41  
+[0m14:24:41  [32mCompleted successfully[0m
+[0m14:24:41  
+[0m14:24:41  Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+
+[2026-05-14T14:24:44.600+0000] {python.py:240} INFO - Done. Returned value was: None
+[2026-05-14T14:24:44.617+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-05-14T14:24:44.618+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=banking_datastack_pipeline, task_id=dbt_transformations, run_id=manual__2026-05-14T14:22:54.732768+00:00, execution_date=20260514T142254, start_date=20260514T142347, end_date=20260514T142444
+[2026-05-14T14:24:44.713+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-05-14T14:24:44.759+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-05-14T14:24:44.764+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

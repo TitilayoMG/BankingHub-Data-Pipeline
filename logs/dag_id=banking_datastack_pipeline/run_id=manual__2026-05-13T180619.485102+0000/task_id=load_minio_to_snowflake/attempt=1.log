@@ -1,0 +1,38 @@
+[2026-05-13T18:06:23.769+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-05-13T18:06:23.787+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: banking_datastack_pipeline.load_minio_to_snowflake manual__2026-05-13T18:06:19.485102+00:00 [queued]>
+[2026-05-13T18:06:23.796+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: banking_datastack_pipeline.load_minio_to_snowflake manual__2026-05-13T18:06:19.485102+00:00 [queued]>
+[2026-05-13T18:06:23.796+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-05-13T18:06:23.812+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): load_minio_to_snowflake> on 2026-05-13 18:06:19.485102+00:00
+[2026-05-13T18:06:23.837+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=6434) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-05-13T18:06:23.833+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'banking_datastack_pipeline', 'load_minio_to_snowflake', 'manual__2026-05-13T18:06:19.485102+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/bankinghub_dag.py', '--cfg-path', '/tmp/tmp15g4qdyc']
+[2026-05-13T18:06:23.840+0000] {standard_task_runner.py:72} INFO - Started process 6438 to run task
+[2026-05-13T18:06:23.840+0000] {standard_task_runner.py:105} INFO - Job 27: Subtask load_minio_to_snowflake
+[2026-05-13T18:06:23.947+0000] {task_command.py:467} INFO - Running <TaskInstance: banking_datastack_pipeline.load_minio_to_snowflake manual__2026-05-13T18:06:19.485102+00:00 [running]> on host f29c735a189b
+[2026-05-13T18:06:24.059+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='banking_datastack_pipeline' AIRFLOW_CTX_TASK_ID='load_minio_to_snowflake' AIRFLOW_CTX_EXECUTION_DATE='2026-05-13T18:06:19.485102+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-13T18:06:19.485102+00:00'
+[2026-05-13T18:06:24.061+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-05-13T18:06:24.080+0000] {load_to_snowflake.py:59} INFO - Starting MinIO -> Snowflake pipeline
+[2026-05-13T18:06:24.082+0000] {load_to_snowflake.py:72} INFO - Step 1: Extracting parquet files from MinIO
+[2026-05-13T18:06:24.231+0000] {load_to_snowflake.py:112} INFO - customers: downloaded=3, skipped=0
+[2026-05-13T18:06:24.396+0000] {load_to_snowflake.py:112} INFO - account: downloaded=8, skipped=0
+[2026-05-13T18:06:24.589+0000] {load_to_snowflake.py:112} INFO - transactions: downloaded=10, skipped=0
+[2026-05-13T18:06:24.590+0000] {load_to_snowflake.py:116} INFO - Extraction complete | total_downloaded=21, total_skipped=0
+[2026-05-13T18:06:24.590+0000] {load_to_snowflake.py:123} INFO - Step 2: Uploading files to Snowflake internal stage
+[2026-05-13T18:06:24.593+0000] {connection.py:626} INFO - Snowflake Connector for Python Version: 4.5.0, Python Version: 3.12.9, Platform: Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2026-05-13T18:06:24.595+0000] {connection.py:1735} INFO - Connecting to GLOBAL Snowflake domain
+[2026-05-13T18:06:34.234+0000] {load_to_snowflake.py:143} INFO - customers: uploaded=3
+[2026-05-13T18:06:39.965+0000] {load_to_snowflake.py:143} INFO - account: uploaded=8
+[2026-05-13T18:06:48.596+0000] {load_to_snowflake.py:143} INFO - transactions: uploaded=10
+[2026-05-13T18:06:48.868+0000] {load_to_snowflake.py:147} INFO - Upload complete | total_uploaded=21
+[2026-05-13T18:06:48.869+0000] {load_to_snowflake.py:154} INFO - Step 3: Loading staged files into raw tables
+[2026-05-13T18:06:48.869+0000] {connection.py:626} INFO - Snowflake Connector for Python Version: 4.5.0, Python Version: 3.12.9, Platform: Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2026-05-13T18:06:48.870+0000] {connection.py:1735} INFO - Connecting to GLOBAL Snowflake domain
+[2026-05-13T18:06:54.042+0000] {load_to_snowflake.py:171} INFO - customers: loaded successfully into RAW.CUSTOMERS
+[2026-05-13T18:06:54.982+0000] {load_to_snowflake.py:171} INFO - account: loaded successfully into RAW.ACCOUNT
+[2026-05-13T18:06:57.847+0000] {load_to_snowflake.py:171} INFO - transactions: loaded successfully into RAW.TRANSACTIONS
+[2026-05-13T18:06:58.170+0000] {load_to_snowflake.py:175} INFO - Pipeline completed successfully
+[2026-05-13T18:06:58.171+0000] {python.py:240} INFO - Done. Returned value was: None
+[2026-05-13T18:06:58.182+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-05-13T18:06:58.182+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=banking_datastack_pipeline, task_id=load_minio_to_snowflake, run_id=manual__2026-05-13T18:06:19.485102+00:00, execution_date=20260513T180619, start_date=20260513T180623, end_date=20260513T180658
+[2026-05-13T18:06:58.254+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-05-13T18:06:58.286+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-13T18:06:58.290+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

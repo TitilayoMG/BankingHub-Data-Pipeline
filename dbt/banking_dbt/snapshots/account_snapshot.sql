@@ -1,0 +1,12 @@
+
+{% snapshot account_snapshot %}
+{{
+    config(
+        target_schema='ANALYTICS',
+        unique_key='account_id',
+        strategy='check',
+        check_cols=['customer_id', 'account_type', 'currency']
+    )
+}}
+SELECT * FROM {{ ref('stg_account')}}
+{% endsnapshot %}

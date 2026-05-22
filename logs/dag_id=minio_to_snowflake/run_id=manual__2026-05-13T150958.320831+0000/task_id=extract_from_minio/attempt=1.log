@@ -1,0 +1,39 @@
+[2026-05-13T15:10:00.892+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-05-13T15:10:00.919+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: minio_to_snowflake.extract_from_minio manual__2026-05-13T15:09:58.320831+00:00 [queued]>
+[2026-05-13T15:10:00.932+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: minio_to_snowflake.extract_from_minio manual__2026-05-13T15:09:58.320831+00:00 [queued]>
+[2026-05-13T15:10:00.933+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-05-13T15:10:00.965+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): extract_from_minio> on 2026-05-13 15:09:58.320831+00:00
+[2026-05-13T15:10:00.985+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'minio_to_snowflake', 'extract_from_minio', 'manual__2026-05-13T15:09:58.320831+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/load_to_snowflake.py', '--cfg-path', '/tmp/tmpfri6gcga']
+[2026-05-13T15:10:00.992+0000] {standard_task_runner.py:105} INFO - Job 18: Subtask extract_from_minio
+[2026-05-13T15:10:00.992+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=3288) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-05-13T15:10:00.995+0000] {standard_task_runner.py:72} INFO - Started process 3292 to run task
+[2026-05-13T15:10:01.111+0000] {task_command.py:467} INFO - Running <TaskInstance: minio_to_snowflake.extract_from_minio manual__2026-05-13T15:09:58.320831+00:00 [running]> on host f29c735a189b
+[2026-05-13T15:10:01.254+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='minio_to_snowflake' AIRFLOW_CTX_TASK_ID='extract_from_minio' AIRFLOW_CTX_EXECUTION_DATE='2026-05-13T15:09:58.320831+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-13T15:09:58.320831+00:00'
+[2026-05-13T15:10:01.257+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-05-13T15:10:01.349+0000] {logging_mixin.py:190} INFO - Downloaded parquet file: customers/customers_20260511_223447_001421.parquet -> /tmp/customers_20260511_223447_001421.parquet
+[2026-05-13T15:10:01.359+0000] {logging_mixin.py:190} INFO - Downloaded parquet file: customers/customers_20260511_223447_096511.parquet -> /tmp/customers_20260511_223447_096511.parquet
+[2026-05-13T15:10:01.368+0000] {logging_mixin.py:190} INFO - Downloaded parquet file: customers/customers_20260511_223447_168009.parquet -> /tmp/customers_20260511_223447_168009.parquet
+[2026-05-13T15:10:01.494+0000] {logging_mixin.py:190} INFO - Downloaded parquet file: account/account_20260511_223445_942108.parquet -> /tmp/account_20260511_223445_942108.parquet
+[2026-05-13T15:10:01.508+0000] {logging_mixin.py:190} INFO - Downloaded parquet file: account/account_20260511_223446_015641.parquet -> /tmp/account_20260511_223446_015641.parquet
+[2026-05-13T15:10:01.518+0000] {logging_mixin.py:190} INFO - Downloaded parquet file: account/account_20260511_223446_272578.parquet -> /tmp/account_20260511_223446_272578.parquet
+[2026-05-13T15:10:01.529+0000] {logging_mixin.py:190} INFO - Downloaded parquet file: account/account_20260511_223446_366327.parquet -> /tmp/account_20260511_223446_366327.parquet
+[2026-05-13T15:10:01.538+0000] {logging_mixin.py:190} INFO - Downloaded parquet file: account/account_20260511_223446_657377.parquet -> /tmp/account_20260511_223446_657377.parquet
+[2026-05-13T15:10:01.550+0000] {logging_mixin.py:190} INFO - Downloaded parquet file: account/account_20260511_223446_744570.parquet -> /tmp/account_20260511_223446_744570.parquet
+[2026-05-13T15:10:01.561+0000] {logging_mixin.py:190} INFO - Downloaded parquet file: account/account_20260511_223446_914431.parquet -> /tmp/account_20260511_223446_914431.parquet
+[2026-05-13T15:10:01.571+0000] {logging_mixin.py:190} INFO - Downloaded parquet file: account/account_20260511_223755_344982.parquet -> /tmp/account_20260511_223755_344982.parquet
+[2026-05-13T15:10:01.653+0000] {logging_mixin.py:190} INFO - Downloaded parquet file: transactions/transactions_20260511_223442_478715.parquet -> /tmp/transactions_20260511_223442_478715.parquet
+[2026-05-13T15:10:01.663+0000] {logging_mixin.py:190} INFO - Downloaded parquet file: transactions/transactions_20260511_223442_782067.parquet -> /tmp/transactions_20260511_223442_782067.parquet
+[2026-05-13T15:10:01.673+0000] {logging_mixin.py:190} INFO - Downloaded parquet file: transactions/transactions_20260511_223442_855078.parquet -> /tmp/transactions_20260511_223442_855078.parquet
+[2026-05-13T15:10:01.683+0000] {logging_mixin.py:190} INFO - Downloaded parquet file: transactions/transactions_20260511_223442_926768.parquet -> /tmp/transactions_20260511_223442_926768.parquet
+[2026-05-13T15:10:01.693+0000] {logging_mixin.py:190} INFO - Downloaded parquet file: transactions/transactions_20260511_223443_004795.parquet -> /tmp/transactions_20260511_223443_004795.parquet
+[2026-05-13T15:10:01.703+0000] {logging_mixin.py:190} INFO - Downloaded parquet file: transactions/transactions_20260511_223443_082360.parquet -> /tmp/transactions_20260511_223443_082360.parquet
+[2026-05-13T15:10:01.713+0000] {logging_mixin.py:190} INFO - Downloaded parquet file: transactions/transactions_20260511_223443_478124.parquet -> /tmp/transactions_20260511_223443_478124.parquet
+[2026-05-13T15:10:01.725+0000] {logging_mixin.py:190} INFO - Downloaded parquet file: transactions/transactions_20260511_223443_908520.parquet -> /tmp/transactions_20260511_223443_908520.parquet
+[2026-05-13T15:10:01.737+0000] {logging_mixin.py:190} INFO - Downloaded parquet file: transactions/transactions_20260511_223443_996535.parquet -> /tmp/transactions_20260511_223443_996535.parquet
+[2026-05-13T15:10:01.745+0000] {logging_mixin.py:190} INFO - Downloaded parquet file: transactions/transactions_20260511_223445_470954.parquet -> /tmp/transactions_20260511_223445_470954.parquet
+[2026-05-13T15:10:01.765+0000] {python.py:240} INFO - Done. Returned value was: None
+[2026-05-13T15:10:01.778+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-05-13T15:10:01.779+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=minio_to_snowflake, task_id=extract_from_minio, run_id=manual__2026-05-13T15:09:58.320831+00:00, execution_date=20260513T150958, start_date=20260513T151000, end_date=20260513T151001
+[2026-05-13T15:10:01.857+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-05-13T15:10:01.927+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-05-13T15:10:01.934+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

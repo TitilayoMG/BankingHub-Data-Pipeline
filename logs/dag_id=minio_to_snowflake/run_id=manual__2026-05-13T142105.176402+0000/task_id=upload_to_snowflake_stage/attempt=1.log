@@ -1,0 +1,102 @@
+[2026-05-13T14:21:14.522+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-05-13T14:21:14.546+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: minio_to_snowflake.upload_to_snowflake_stage manual__2026-05-13T14:21:05.176402+00:00 [queued]>
+[2026-05-13T14:21:14.557+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: minio_to_snowflake.upload_to_snowflake_stage manual__2026-05-13T14:21:05.176402+00:00 [queued]>
+[2026-05-13T14:21:14.558+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-05-13T14:21:14.574+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): upload_to_snowflake_stage> on 2026-05-13 14:21:05.176402+00:00
+[2026-05-13T14:21:14.588+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'minio_to_snowflake', 'upload_to_snowflake_stage', 'manual__2026-05-13T14:21:05.176402+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/load_to_snowflake.py', '--cfg-path', '/tmp/tmpx9u8jsba']
+[2026-05-13T14:21:14.592+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=2006) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-05-13T14:21:14.593+0000] {standard_task_runner.py:105} INFO - Job 10: Subtask upload_to_snowflake_stage
+[2026-05-13T14:21:14.594+0000] {standard_task_runner.py:72} INFO - Started process 2010 to run task
+[2026-05-13T14:21:14.699+0000] {task_command.py:467} INFO - Running <TaskInstance: minio_to_snowflake.upload_to_snowflake_stage manual__2026-05-13T14:21:05.176402+00:00 [running]> on host f29c735a189b
+[2026-05-13T14:21:14.811+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='minio_to_snowflake' AIRFLOW_CTX_TASK_ID='upload_to_snowflake_stage' AIRFLOW_CTX_EXECUTION_DATE='2026-05-13T14:21:05.176402+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-13T14:21:05.176402+00:00'
+[2026-05-13T14:21:14.814+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-05-13T14:21:14.880+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2026-05-13T14:21:14.882+0000] {connection.py:626} INFO - Snowflake Connector for Python Version: 4.5.0, Python Version: 3.12.9, Platform: Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2026-05-13T14:21:14.885+0000] {connection.py:1735} INFO - Connecting to GLOBAL Snowflake domain
+[2026-05-13T14:21:30.893+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/booking.png to stage/customers
+[2026-05-13T14:21:31.693+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/customers_20260511_223447_001421.parquet to stage/customers
+[2026-05-13T14:21:32.508+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/customers_20260511_223447_096511.parquet to stage/customers
+[2026-05-13T14:21:33.593+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/customers_20260511_223447_168009.parquet to stage/customers
+[2026-05-13T14:21:34.713+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223445_850784.parquet to stage/account
+[2026-05-13T14:21:35.673+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223445_942108.parquet to stage/account
+[2026-05-13T14:21:36.573+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223446_015641.parquet to stage/account
+[2026-05-13T14:21:37.317+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223446_093232.parquet to stage/account
+[2026-05-13T14:21:38.027+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223446_181612.parquet to stage/account
+[2026-05-13T14:21:40.204+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223446_272578.parquet to stage/account
+[2026-05-13T14:21:41.388+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223446_366327.parquet to stage/account
+[2026-05-13T14:21:42.288+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223446_568672.parquet to stage/account
+[2026-05-13T14:21:43.004+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223446_657377.parquet to stage/account
+[2026-05-13T14:21:43.820+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223446_744570.parquet to stage/account
+[2026-05-13T14:21:44.798+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223446_825327.parquet to stage/account
+[2026-05-13T14:21:45.744+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223446_914431.parquet to stage/account
+[2026-05-13T14:21:46.848+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223755_344982.parquet to stage/account
+[2026-05-13T14:21:48.501+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/booking.png to stage/account
+[2026-05-13T14:21:49.971+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/quality.png to stage/transactions
+[2026-05-13T14:21:51.212+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223442_478715.parquet to stage/transactions
+[2026-05-13T14:21:52.132+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223442_782067.parquet to stage/transactions
+[2026-05-13T14:21:53.270+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223442_855078.parquet to stage/transactions
+[2026-05-13T14:21:55.280+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223442_926768.parquet to stage/transactions
+[2026-05-13T14:21:56.536+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223443_004795.parquet to stage/transactions
+[2026-05-13T14:21:57.588+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223443_082360.parquet to stage/transactions
+[2026-05-13T14:21:58.453+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223443_162845.parquet to stage/transactions
+[2026-05-13T14:21:59.487+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223443_233083.parquet to stage/transactions
+[2026-05-13T14:22:00.440+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223443_406474.parquet to stage/transactions
+[2026-05-13T14:22:01.400+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223443_478124.parquet to stage/transactions
+[2026-05-13T14:22:02.464+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223443_548375.parquet to stage/transactions
+[2026-05-13T14:22:03.401+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223443_624518.parquet to stage/transactions
+[2026-05-13T14:22:04.492+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223443_709156.parquet to stage/transactions
+[2026-05-13T14:22:05.389+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223443_817268.parquet to stage/transactions
+[2026-05-13T14:22:06.307+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223443_908520.parquet to stage/transactions
+[2026-05-13T14:22:07.128+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223443_996535.parquet to stage/transactions
+[2026-05-13T14:22:08.029+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223444_080320.parquet to stage/transactions
+[2026-05-13T14:22:08.977+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223444_160729.parquet to stage/transactions
+[2026-05-13T14:22:09.882+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223444_239788.parquet to stage/transactions
+[2026-05-13T14:22:10.927+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223444_310534.parquet to stage/transactions
+[2026-05-13T14:22:11.816+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223444_399256.parquet to stage/transactions
+[2026-05-13T14:22:12.633+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223444_482436.parquet to stage/transactions
+[2026-05-13T14:22:13.479+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223444_577527.parquet to stage/transactions
+[2026-05-13T14:22:14.416+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223444_801487.parquet to stage/transactions
+[2026-05-13T14:22:15.705+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223444_924192.parquet to stage/transactions
+[2026-05-13T14:22:17.207+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223445_084371.parquet to stage/transactions
+[2026-05-13T14:22:18.302+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223445_222267.parquet to stage/transactions
+[2026-05-13T14:22:19.433+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223445_372886.parquet to stage/transactions
+[2026-05-13T14:22:20.822+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223445_470954.parquet to stage/transactions
+[2026-05-13T14:22:23.297+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223445_568011.parquet to stage/transactions
+[2026-05-13T14:22:25.449+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223445_750905.parquet to stage/transactions
+[2026-05-13T14:22:27.938+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223447_236099.parquet to stage/transactions
+[2026-05-13T14:22:29.797+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223447_309831.parquet to stage/transactions
+[2026-05-13T14:22:30.919+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223447_407081.parquet to stage/transactions
+[2026-05-13T14:22:31.985+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223447_509803.parquet to stage/transactions
+[2026-05-13T14:22:33.153+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223447_608799.parquet to stage/transactions
+[2026-05-13T14:22:34.805+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223447_701852.parquet to stage/transactions
+[2026-05-13T14:22:35.961+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223447_794649.parquet to stage/transactions
+[2026-05-13T14:22:37.156+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223447_946115.parquet to stage/transactions
+[2026-05-13T14:22:38.399+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223448_059295.parquet to stage/transactions
+[2026-05-13T14:22:39.583+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223448_155523.parquet to stage/transactions
+[2026-05-13T14:22:40.893+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223448_285245.parquet to stage/transactions
+[2026-05-13T14:22:41.957+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223448_369830.parquet to stage/transactions
+[2026-05-13T14:22:43.330+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223448_447003.parquet to stage/transactions
+[2026-05-13T14:22:45.464+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223448_520290.parquet to stage/transactions
+[2026-05-13T14:22:46.580+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223448_787817.parquet to stage/transactions
+[2026-05-13T14:22:48.027+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223448_886440.parquet to stage/transactions
+[2026-05-13T14:22:49.100+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223448_961287.parquet to stage/transactions
+[2026-05-13T14:22:50.824+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223449_048356.parquet to stage/transactions
+[2026-05-13T14:22:52.000+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223449_125549.parquet to stage/transactions
+[2026-05-13T14:22:52.959+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223449_199423.parquet to stage/transactions
+[2026-05-13T14:22:53.799+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223449_276653.parquet to stage/transactions
+[2026-05-13T14:22:55.005+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223449_368119.parquet to stage/transactions
+[2026-05-13T14:22:56.519+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223449_467159.parquet to stage/transactions
+[2026-05-13T14:22:57.504+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223449_582522.parquet to stage/transactions
+[2026-05-13T14:22:58.503+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223449_802221.parquet to stage/transactions
+[2026-05-13T14:22:59.337+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223449_988025.parquet to stage/transactions
+[2026-05-13T14:23:00.372+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223450_082131.parquet to stage/transactions
+[2026-05-13T14:23:01.129+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223450_189198.parquet to stage/transactions
+[2026-05-13T14:23:02.028+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223450_286928.parquet to stage/transactions
+[2026-05-13T14:23:02.817+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223450_376496.parquet to stage/transactions
+[2026-05-13T14:23:03.626+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223755_247361.parquet to stage/transactions
+[2026-05-13T14:23:04.051+0000] {python.py:240} INFO - Done. Returned value was: None
+[2026-05-13T14:23:04.063+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-05-13T14:23:04.064+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=minio_to_snowflake, task_id=upload_to_snowflake_stage, run_id=manual__2026-05-13T14:21:05.176402+00:00, execution_date=20260513T142105, start_date=20260513T142114, end_date=20260513T142304
+[2026-05-13T14:23:04.110+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-05-13T14:23:04.137+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-05-13T14:23:04.142+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

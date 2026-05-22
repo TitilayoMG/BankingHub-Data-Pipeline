@@ -1,0 +1,43 @@
+[2026-05-13T14:53:09.904+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-05-13T14:53:09.929+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: minio_to_snowflake.upload_to_snowflake_stage manual__2026-05-13T14:53:00.231496+00:00 [queued]>
+[2026-05-13T14:53:09.940+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: minio_to_snowflake.upload_to_snowflake_stage manual__2026-05-13T14:53:00.231496+00:00 [queued]>
+[2026-05-13T14:53:09.941+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-05-13T14:53:09.966+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): upload_to_snowflake_stage> on 2026-05-13 14:53:00.231496+00:00
+[2026-05-13T14:53:09.995+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'minio_to_snowflake', 'upload_to_snowflake_stage', 'manual__2026-05-13T14:53:00.231496+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/load_to_snowflake.py', '--cfg-path', '/tmp/tmpgjxyicl_']
+[2026-05-13T14:53:10.004+0000] {standard_task_runner.py:105} INFO - Job 13: Subtask upload_to_snowflake_stage
+[2026-05-13T14:53:10.006+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=2822) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-05-13T14:53:10.008+0000] {standard_task_runner.py:72} INFO - Started process 2826 to run task
+[2026-05-13T14:53:10.133+0000] {task_command.py:467} INFO - Running <TaskInstance: minio_to_snowflake.upload_to_snowflake_stage manual__2026-05-13T14:53:00.231496+00:00 [running]> on host f29c735a189b
+[2026-05-13T14:53:10.299+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='minio_to_snowflake' AIRFLOW_CTX_TASK_ID='upload_to_snowflake_stage' AIRFLOW_CTX_EXECUTION_DATE='2026-05-13T14:53:00.231496+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-13T14:53:00.231496+00:00'
+[2026-05-13T14:53:10.301+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-05-13T14:53:10.343+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2026-05-13T14:53:10.345+0000] {connection.py:626} INFO - Snowflake Connector for Python Version: 4.5.0, Python Version: 3.12.9, Platform: Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2026-05-13T14:53:10.347+0000] {connection.py:1735} INFO - Connecting to GLOBAL Snowflake domain
+[2026-05-13T14:53:24.904+0000] {connectionpool.py:868} WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='sfc-za-ds1-04-customer-stage.s3.af-south-1.amazonaws.com', port=443): Failed to resolve 'sfc-za-ds1-04-customer-stage.s3.af-south-1.amazonaws.com' ([Errno -5] No address associated with hostname)")': /g1ii1000-s/stages/ded298c2-c623-4f56-9b10-95eef8fb1884/customers/customers_20260511_223447_001421.parquet
+[2026-05-13T14:53:26.885+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/customers_20260511_223447_001421.parquet to stage/customers
+[2026-05-13T14:53:28.501+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/customers_20260511_223447_096511.parquet to stage/customers
+[2026-05-13T14:53:30.988+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/customers_20260511_223447_168009.parquet to stage/customers
+[2026-05-13T14:53:32.275+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223445_942108.parquet to stage/account
+[2026-05-13T14:53:33.140+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223446_015641.parquet to stage/account
+[2026-05-13T14:53:35.638+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223446_272578.parquet to stage/account
+[2026-05-13T14:53:38.351+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223446_366327.parquet to stage/account
+[2026-05-13T14:53:41.451+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223446_657377.parquet to stage/account
+[2026-05-13T14:53:43.098+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223446_744570.parquet to stage/account
+[2026-05-13T14:53:44.353+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223446_914431.parquet to stage/account
+[2026-05-13T14:53:47.141+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223755_344982.parquet to stage/account
+[2026-05-13T14:53:48.889+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223442_478715.parquet to stage/transactions
+[2026-05-13T14:53:50.299+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223442_782067.parquet to stage/transactions
+[2026-05-13T14:53:51.645+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223442_855078.parquet to stage/transactions
+[2026-05-13T14:53:53.226+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223442_926768.parquet to stage/transactions
+[2026-05-13T14:53:54.586+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223443_004795.parquet to stage/transactions
+[2026-05-13T14:53:56.209+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223443_082360.parquet to stage/transactions
+[2026-05-13T14:53:57.778+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223443_478124.parquet to stage/transactions
+[2026-05-13T14:53:59.075+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223443_908520.parquet to stage/transactions
+[2026-05-13T14:54:00.280+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223443_996535.parquet to stage/transactions
+[2026-05-13T14:54:01.589+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223445_470954.parquet to stage/transactions
+[2026-05-13T14:54:02.178+0000] {python.py:240} INFO - Done. Returned value was: None
+[2026-05-13T14:54:02.192+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-05-13T14:54:02.193+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=minio_to_snowflake, task_id=upload_to_snowflake_stage, run_id=manual__2026-05-13T14:53:00.231496+00:00, execution_date=20260513T145300, start_date=20260513T145309, end_date=20260513T145402
+[2026-05-13T14:54:02.260+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-05-13T14:54:02.292+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-05-13T14:54:02.296+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

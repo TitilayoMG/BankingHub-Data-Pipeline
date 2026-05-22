@@ -1,0 +1,192 @@
+[0m20:07:15.486188 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7da0c44f9520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7da0c44873e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7da0c44fade0>]}
+
+
+============================== 20:07:15.509589 | 7cb746e5-8933-4be5-8c87-932b1ad09cac ==============================
+[0m20:07:15.509589 [info ] [MainThread]: Running with dbt=1.11.9
+[0m20:07:15.511126 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'log_path': 'logs', 'use_colors': 'True', 'no_print': 'None', 'cache_selected_only': 'False', 'printer_width': '80', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'write_json': 'True', 'version_check': 'True', 'empty': 'None', 'debug': 'False', 'fail_fast': 'False', 'introspect': 'True', 'static_parser': 'True', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'invocation_command': 'dbt init banking_dbt', 'profiles_dir': '/home/airflow/.dbt', 'log_format': 'default', 'warn_error': 'None'}
+[0m20:07:15.569842 [info ] [MainThread]: Creating dbt configuration folder at /home/airflow/.dbt
+[0m20:07:15.578011 [info ] [MainThread]: A project called banking_dbt already exists here.
+[0m20:07:15.592369 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.18941896, "process_in_blocks": "35488", "process_kernel_time": 3.773441, "process_mem_max_rss": "107080", "process_out_blocks": "1064", "process_user_time": 4.595497}
+[0m20:07:15.594571 [debug] [MainThread]: Command `dbt init` succeeded at 20:07:15.594314 after 0.19 seconds
+[0m20:07:15.596170 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7da0c44873e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7da0c37a5ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7da0c37a5f10>]}
+[0m20:07:15.597769 [debug] [MainThread]: Flushing usage events
+[0m20:07:15.719538 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:08:15.119009 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x707587e21730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70758576cb30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x707585fae900>]}
+
+
+============================== 20:08:15.129653 | 1d57ebce-3961-4bf5-b836-da9694705976 ==============================
+[0m20:08:15.129653 [info ] [MainThread]: Running with dbt=1.11.9
+[0m20:08:15.130600 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'partial_parse': 'True', 'debug': 'False', 'write_json': 'True', 'printer_width': '80', 'no_print': 'None', 'empty': 'None', 'static_parser': 'True', 'invocation_command': 'dbt init banking_dbt', 'log_path': 'logs', 'indirect_selection': 'eager', 'profiles_dir': '/home/airflow/.dbt', 'log_format': 'default', 'quiet': 'False', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'warn_error': 'None', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True'}
+[0m20:08:15.150157 [debug] [MainThread]: Starter project path: /home/airflow/.local/lib/python3.12/site-packages/dbt/include/starter_project
+[0m20:08:15.151801 [error] [MainThread]: Encountered an error:
+[Errno 17] File exists: 'banking_dbt'
+[0m20:08:15.156938 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/dbt/cli/main.py", line 488, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/dbt/task/init.py", line 342, in run
+    self.create_new_project(project_name, profile_name)
+  File "/home/airflow/.local/lib/python3.12/site-packages/dbt/task/init.py", line 283, in create_new_project
+    self.copy_starter_repo(project_name)
+  File "/home/airflow/.local/lib/python3.12/site-packages/dbt/task/init.py", line 60, in copy_starter_repo
+    shutil.copytree(
+  File "/usr/local/lib/python3.12/shutil.py", line 600, in copytree
+    return _copytree(entries=entries, src=src, dst=dst, symlinks=symlinks,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/shutil.py", line 498, in _copytree
+    os.makedirs(dst, exist_ok=dirs_exist_ok)
+  File "<frozen os>", line 225, in makedirs
+FileExistsError: [Errno 17] File exists: 'banking_dbt'
+
+[0m20:08:15.159450 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 0.1123288, "process_in_blocks": "128", "process_kernel_time": 0.374547, "process_mem_max_rss": "107324", "process_out_blocks": "0", "process_user_time": 2.761774}
+[0m20:08:15.160609 [debug] [MainThread]: Command `dbt init` failed at 20:08:15.160435 after 0.11 seconds
+[0m20:08:15.161593 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7075855c6f30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7075861ff080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7075852da1e0>]}
+[0m20:08:15.162624 [debug] [MainThread]: Flushing usage events
+[0m20:08:15.185607 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:10:08.621717 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x700f64b06420>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x700f61272000>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x700f61df1e20>]}
+
+
+============================== 20:10:08.636995 | b53c52b2-fa8e-4a53-941b-b8b63ab4e21c ==============================
+[0m20:10:08.636995 [info ] [MainThread]: Running with dbt=1.11.9
+[0m20:10:08.638333 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'partial_parse': 'True', 'warn_error': 'None', 'debug': 'False', 'indirect_selection': 'eager', 'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'fail_fast': 'False', 'introspect': 'True', 'write_json': 'True', 'log_path': 'logs', 'invocation_command': 'dbt init banking_dbt', 'empty': 'None', 'log_format': 'default', 'printer_width': '80', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'profiles_dir': '/home/airflow/.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'use_colors': 'True'}
+[0m20:10:08.651016 [debug] [MainThread]: Starter project path: /home/airflow/.local/lib/python3.12/site-packages/dbt/include/starter_project
+[0m20:10:08.652329 [error] [MainThread]: Encountered an error:
+[Errno 17] File exists: 'banking_dbt'
+[0m20:10:08.656241 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/dbt/cli/main.py", line 488, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/dbt/task/init.py", line 342, in run
+    self.create_new_project(project_name, profile_name)
+  File "/home/airflow/.local/lib/python3.12/site-packages/dbt/task/init.py", line 283, in create_new_project
+    self.copy_starter_repo(project_name)
+  File "/home/airflow/.local/lib/python3.12/site-packages/dbt/task/init.py", line 60, in copy_starter_repo
+    shutil.copytree(
+  File "/usr/local/lib/python3.12/shutil.py", line 600, in copytree
+    return _copytree(entries=entries, src=src, dst=dst, symlinks=symlinks,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/shutil.py", line 498, in _copytree
+    os.makedirs(dst, exist_ok=dirs_exist_ok)
+  File "<frozen os>", line 225, in makedirs
+FileExistsError: [Errno 17] File exists: 'banking_dbt'
+
+[0m20:10:08.659425 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 0.119465575, "process_in_blocks": "0", "process_kernel_time": 0.330359, "process_mem_max_rss": "107116", "process_out_blocks": "0", "process_user_time": 2.605712}
+[0m20:10:08.660513 [debug] [MainThread]: Command `dbt init` failed at 20:10:08.660319 after 0.12 seconds
+[0m20:10:08.661307 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x700f633d5820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x700f631d3140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x700f60ee3350>]}
+[0m20:10:08.662104 [debug] [MainThread]: Flushing usage events
+[0m20:10:08.677944 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:37:35.848556 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b688eddfb90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b688eaec0e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b688f5c4ef0>]}
+
+
+============================== 20:37:35.875322 | 434ab392-2428-45b9-a527-d4158ec36bb8 ==============================
+[0m20:37:35.875322 [info ] [MainThread]: Running with dbt=1.11.9
+[0m20:37:35.876782 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': 'logs', 'warn_error': 'None', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'target_path': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt init tee_banking__dbt', 'use_colors': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'log_format': 'default', 'version_check': 'True', 'empty': 'None', 'profiles_dir': '/home/airflow/.dbt', 'static_parser': 'True', 'debug': 'False', 'write_json': 'True', 'no_print': 'None', 'use_experimental_parser': 'False', 'printer_width': '80', 'quiet': 'False'}
+[0m20:37:35.907862 [debug] [MainThread]: Starter project path: /home/airflow/.local/lib/python3.12/site-packages/dbt/include/starter_project
+[0m20:37:35.944014 [info ] [MainThread]: 
+Your new dbt project "tee_banking__dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m20:37:35.945363 [info ] [MainThread]: Setting up your profile.
+[0m20:39:51.497851 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m20:39:51.499971 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m20:39:51.501379 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m20:43:16.042589 [info ] [MainThread]: Profile tee_banking__dbt written to /home/airflow/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m20:43:16.049705 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 332.61707, "process_in_blocks": "31152", "process_kernel_time": 2.287221, "process_mem_max_rss": "204604", "process_out_blocks": "64", "process_user_time": 4.974707}
+[0m20:43:16.053752 [debug] [MainThread]: Command `dbt init` succeeded at 20:43:16.053221 after 332.62 seconds
+[0m20:43:16.056080 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b688dba2f30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b6877210440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b687c38de80>]}
+[0m20:43:16.058038 [debug] [MainThread]: Flushing usage events
+[0m20:43:19.773852 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:43:33.831962 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cf9569b9bb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cf955eae270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cf956b40590>]}
+
+
+============================== 20:43:33.843096 | 09193f85-d644-4bfd-b079-afa6baa4b81f ==============================
+[0m20:43:33.843096 [info ] [MainThread]: Running with dbt=1.11.9
+[0m20:43:33.844557 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'log_path': 'logs', 'use_colors': 'True', 'profiles_dir': '/home/airflow/.dbt', 'invocation_command': 'dbt debug', 'empty': 'None', 'log_cache_events': 'False', 'static_parser': 'True', 'quiet': 'False', 'fail_fast': 'False', 'indirect_selection': 'eager', 'debug': 'False', 'target_path': 'None', 'version_check': 'True', 'introspect': 'True', 'write_json': 'True', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'log_format': 'default', 'cache_selected_only': 'False'}
+[0m20:43:33.866153 [info ] [MainThread]: dbt version: 1.11.9
+[0m20:43:33.868624 [info ] [MainThread]: python version: 3.12.9
+[0m20:43:33.869777 [info ] [MainThread]: python path: /home/airflow/.local/bin/python
+[0m20:43:33.870563 [info ] [MainThread]: os info: Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[0m20:43:34.730034 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m20:43:34.731652 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m20:43:34.733448 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m20:43:34.842567 [info ] [MainThread]: Using profiles dir at /home/airflow/.dbt
+[0m20:43:34.843489 [info ] [MainThread]: Using profiles.yml file at /home/airflow/.dbt/profiles.yml
+[0m20:43:34.844137 [info ] [MainThread]: Using dbt_project.yml file at /opt/airflow/dbt_project.yml
+[0m20:43:34.847421 [info ] [MainThread]: adapter type: snowflake
+[0m20:43:34.848341 [info ] [MainThread]: adapter version: 1.11.4
+[0m20:43:34.849036 [info ] [MainThread]: Configuration:
+[0m20:43:34.849786 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m20:43:34.850927 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m20:43:34.852170 [info ] [MainThread]: Required dependencies:
+[0m20:43:34.853105 [debug] [MainThread]: Executing "git --help"
+[0m20:43:34.858282 [info ] [MainThread]:  - git [[31mERROR[0m]
+
+[0m20:43:34.859345 [info ] [MainThread]: Connection:
+[0m20:43:34.860246 [info ] [MainThread]:   account: ps73851.af-south-1.aws
+[0m20:43:34.861323 [info ] [MainThread]:   user: madeena
+[0m20:43:34.862300 [info ] [MainThread]:   database: BANKING
+[0m20:43:34.863380 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m20:43:34.864636 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m20:43:34.865532 [info ] [MainThread]:   schema: RAW
+[0m20:43:34.866854 [info ] [MainThread]:   authenticator: None
+[0m20:43:34.868582 [info ] [MainThread]:   oauth_client_id: None
+[0m20:43:34.869665 [info ] [MainThread]:   query_tag: None
+[0m20:43:34.870726 [info ] [MainThread]:   client_session_keep_alive: False
+[0m20:43:34.871709 [info ] [MainThread]:   host: None
+[0m20:43:34.872844 [info ] [MainThread]:   port: None
+[0m20:43:34.873725 [info ] [MainThread]:   proxy_host: None
+[0m20:43:34.874601 [info ] [MainThread]:   proxy_port: None
+[0m20:43:34.875359 [info ] [MainThread]:   protocol: None
+[0m20:43:34.876036 [info ] [MainThread]:   connect_retries: 1
+[0m20:43:34.876858 [info ] [MainThread]:   connect_timeout: None
+[0m20:43:34.878287 [info ] [MainThread]:   retry_on_database_errors: False
+[0m20:43:34.879396 [info ] [MainThread]:   retry_all: False
+[0m20:43:34.881115 [info ] [MainThread]:   insecure_mode: False
+[0m20:43:34.882542 [info ] [MainThread]:   reuse_connections: True
+[0m20:43:34.884024 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m20:43:34.885218 [info ] [MainThread]:   platform_detection_timeout_seconds: 0.0
+[0m20:43:34.886556 [info ] [MainThread]: Registered adapter: snowflake=1.11.4
+[0m20:43:35.085872 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m20:43:35.249950 [debug] [MainThread]: Using snowflake connection "debug"
+[0m20:43:35.251026 [debug] [MainThread]: On debug: select 1 as id
+[0m20:43:35.251996 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:43:41.952357 [debug] [MainThread]: SQL status: SUCCESS 1 in 6.700 seconds
+[0m20:43:41.955873 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m20:43:41.957277 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m20:43:41.958722 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </opt/airflow/dbt_project.yml> not found
+
+[0m20:43:41.960073 [info ] [MainThread]: Error from git --help: User does not have permissions for this command: "git"
+
+[0m20:43:41.962889 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 8.233109, "process_in_blocks": "3008", "process_kernel_time": 1.045696, "process_mem_max_rss": "220544", "process_out_blocks": "2864", "process_user_time": 4.543653}
+[0m20:43:41.964656 [debug] [MainThread]: Command `dbt debug` failed at 20:43:41.964377 after 8.24 seconds
+[0m20:43:41.965970 [debug] [MainThread]: Connection 'debug' was left open.
+[0m20:43:41.967234 [debug] [MainThread]: On debug: Close
+[0m20:43:42.410651 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cf9579558b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cf93e02e720>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cf93e8b2ab0>]}
+[0m20:43:42.412593 [debug] [MainThread]: Flushing usage events
+[0m20:43:43.876456 [debug] [MainThread]: An error was encountered while trying to flush usage events

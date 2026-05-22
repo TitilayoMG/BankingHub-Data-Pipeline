@@ -1,0 +1,100 @@
+[2026-05-13T17:41:44.062+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-05-13T17:41:44.084+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: minio_to_snowflake.load_minio_to_snowflake manual__2026-05-13T17:41:38.805186+00:00 [queued]>
+[2026-05-13T17:41:44.095+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: minio_to_snowflake.load_minio_to_snowflake manual__2026-05-13T17:41:38.805186+00:00 [queued]>
+[2026-05-13T17:41:44.096+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-05-13T17:41:44.114+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): load_minio_to_snowflake> on 2026-05-13 17:41:38.805186+00:00
+[2026-05-13T17:41:44.133+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=5906) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-05-13T17:41:44.128+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'minio_to_snowflake', 'load_minio_to_snowflake', 'manual__2026-05-13T17:41:38.805186+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/load_to_snowflake.py', '--cfg-path', '/tmp/tmp5bj3l766']
+[2026-05-13T17:41:44.135+0000] {standard_task_runner.py:72} INFO - Started process 5910 to run task
+[2026-05-13T17:41:44.135+0000] {standard_task_runner.py:105} INFO - Job 24: Subtask load_minio_to_snowflake
+[2026-05-13T17:41:44.230+0000] {task_command.py:467} INFO - Running <TaskInstance: minio_to_snowflake.load_minio_to_snowflake manual__2026-05-13T17:41:38.805186+00:00 [running]> on host f29c735a189b
+[2026-05-13T17:41:44.452+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='minio_to_snowflake' AIRFLOW_CTX_TASK_ID='load_minio_to_snowflake' AIRFLOW_CTX_EXECUTION_DATE='2026-05-13T17:41:38.805186+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-13T17:41:38.805186+00:00'
+[2026-05-13T17:41:44.461+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-05-13T17:41:44.650+0000] {logging_mixin.py:190} INFO - Downloaded: customers/customers_20260511_223447_001421.parquet -> /tmp/customers_20260511_223447_001421.parquet
+[2026-05-13T17:41:44.661+0000] {logging_mixin.py:190} INFO - Downloaded: customers/customers_20260511_223447_096511.parquet -> /tmp/customers_20260511_223447_096511.parquet
+[2026-05-13T17:41:44.672+0000] {logging_mixin.py:190} INFO - Downloaded: customers/customers_20260511_223447_168009.parquet -> /tmp/customers_20260511_223447_168009.parquet
+[2026-05-13T17:41:44.763+0000] {logging_mixin.py:190} INFO - Downloaded: account/account_20260511_223445_942108.parquet -> /tmp/account_20260511_223445_942108.parquet
+[2026-05-13T17:41:44.775+0000] {logging_mixin.py:190} INFO - Downloaded: account/account_20260511_223446_015641.parquet -> /tmp/account_20260511_223446_015641.parquet
+[2026-05-13T17:41:44.788+0000] {logging_mixin.py:190} INFO - Downloaded: account/account_20260511_223446_272578.parquet -> /tmp/account_20260511_223446_272578.parquet
+[2026-05-13T17:41:44.797+0000] {logging_mixin.py:190} INFO - Downloaded: account/account_20260511_223446_366327.parquet -> /tmp/account_20260511_223446_366327.parquet
+[2026-05-13T17:41:44.806+0000] {logging_mixin.py:190} INFO - Downloaded: account/account_20260511_223446_657377.parquet -> /tmp/account_20260511_223446_657377.parquet
+[2026-05-13T17:41:44.819+0000] {logging_mixin.py:190} INFO - Downloaded: account/account_20260511_223446_744570.parquet -> /tmp/account_20260511_223446_744570.parquet
+[2026-05-13T17:41:44.828+0000] {logging_mixin.py:190} INFO - Downloaded: account/account_20260511_223446_914431.parquet -> /tmp/account_20260511_223446_914431.parquet
+[2026-05-13T17:41:44.838+0000] {logging_mixin.py:190} INFO - Downloaded: account/account_20260511_223755_344982.parquet -> /tmp/account_20260511_223755_344982.parquet
+[2026-05-13T17:41:44.929+0000] {logging_mixin.py:190} INFO - Downloaded: transactions/transactions_20260511_223442_478715.parquet -> /tmp/transactions_20260511_223442_478715.parquet
+[2026-05-13T17:41:44.948+0000] {logging_mixin.py:190} INFO - Downloaded: transactions/transactions_20260511_223442_782067.parquet -> /tmp/transactions_20260511_223442_782067.parquet
+[2026-05-13T17:41:44.962+0000] {logging_mixin.py:190} INFO - Downloaded: transactions/transactions_20260511_223442_855078.parquet -> /tmp/transactions_20260511_223442_855078.parquet
+[2026-05-13T17:41:44.976+0000] {logging_mixin.py:190} INFO - Downloaded: transactions/transactions_20260511_223442_926768.parquet -> /tmp/transactions_20260511_223442_926768.parquet
+[2026-05-13T17:41:44.990+0000] {logging_mixin.py:190} INFO - Downloaded: transactions/transactions_20260511_223443_004795.parquet -> /tmp/transactions_20260511_223443_004795.parquet
+[2026-05-13T17:41:45.005+0000] {logging_mixin.py:190} INFO - Downloaded: transactions/transactions_20260511_223443_082360.parquet -> /tmp/transactions_20260511_223443_082360.parquet
+[2026-05-13T17:41:45.022+0000] {logging_mixin.py:190} INFO - Downloaded: transactions/transactions_20260511_223443_478124.parquet -> /tmp/transactions_20260511_223443_478124.parquet
+[2026-05-13T17:41:45.034+0000] {logging_mixin.py:190} INFO - Downloaded: transactions/transactions_20260511_223443_908520.parquet -> /tmp/transactions_20260511_223443_908520.parquet
+[2026-05-13T17:41:45.045+0000] {logging_mixin.py:190} INFO - Downloaded: transactions/transactions_20260511_223443_996535.parquet -> /tmp/transactions_20260511_223443_996535.parquet
+[2026-05-13T17:41:45.062+0000] {logging_mixin.py:190} INFO - Downloaded: transactions/transactions_20260511_223445_470954.parquet -> /tmp/transactions_20260511_223445_470954.parquet
+[2026-05-13T17:41:45.090+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2026-05-13T17:41:45.093+0000] {connection.py:626} INFO - Snowflake Connector for Python Version: 4.5.0, Python Version: 3.12.9, Platform: Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2026-05-13T17:41:45.095+0000] {connection.py:1735} INFO - Connecting to GLOBAL Snowflake domain
+[2026-05-13T17:41:58.855+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/customers_20260511_223447_001421.parquet -> @BANKING_STAGE/customers
+[2026-05-13T17:41:59.635+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/customers_20260511_223447_096511.parquet -> @BANKING_STAGE/customers
+[2026-05-13T17:42:00.225+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/customers_20260511_223447_168009.parquet -> @BANKING_STAGE/customers
+[2026-05-13T17:42:01.122+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223445_942108.parquet -> @BANKING_STAGE/account
+[2026-05-13T17:42:01.631+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223446_015641.parquet -> @BANKING_STAGE/account
+[2026-05-13T17:42:02.581+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223446_272578.parquet -> @BANKING_STAGE/account
+[2026-05-13T17:42:03.495+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223446_366327.parquet -> @BANKING_STAGE/account
+[2026-05-13T17:42:04.955+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223446_657377.parquet -> @BANKING_STAGE/account
+[2026-05-13T17:42:08.917+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223446_744570.parquet -> @BANKING_STAGE/account
+[2026-05-13T17:42:15.042+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223446_914431.parquet -> @BANKING_STAGE/account
+[2026-05-13T17:42:16.344+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/account_20260511_223755_344982.parquet -> @BANKING_STAGE/account
+[2026-05-13T17:42:18.030+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223442_478715.parquet -> @BANKING_STAGE/transactions
+[2026-05-13T17:42:19.427+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223442_782067.parquet -> @BANKING_STAGE/transactions
+[2026-05-13T17:42:20.519+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223442_855078.parquet -> @BANKING_STAGE/transactions
+[2026-05-13T17:42:21.292+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223442_926768.parquet -> @BANKING_STAGE/transactions
+[2026-05-13T17:42:21.800+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223443_004795.parquet -> @BANKING_STAGE/transactions
+[2026-05-13T17:42:22.823+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223443_082360.parquet -> @BANKING_STAGE/transactions
+[2026-05-13T17:42:23.755+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223443_478124.parquet -> @BANKING_STAGE/transactions
+[2026-05-13T17:42:24.946+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223443_908520.parquet -> @BANKING_STAGE/transactions
+[2026-05-13T17:42:25.622+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223443_996535.parquet -> @BANKING_STAGE/transactions
+[2026-05-13T17:42:27.624+0000] {logging_mixin.py:190} INFO - Uploaded /tmp/transactions_20260511_223445_470954.parquet -> @BANKING_STAGE/transactions
+[2026-05-13T17:42:28.815+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2026-05-13T17:42:28.819+0000] {connection.py:626} INFO - Snowflake Connector for Python Version: 4.5.0, Python Version: 3.12.9, Platform: Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2026-05-13T17:42:28.820+0000] {connection.py:1735} INFO - Connecting to GLOBAL Snowflake domain
+[2026-05-13T17:42:33.185+0000] {sql.py:511} INFO - Running statement: COPY INTO RAW.CUSTOMERS
+        FROM @BANKING_STAGE/customers
+        FILE_FORMAT = (TYPE = PARQUET)
+        MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
+        PATTERN='.*\.parquet'
+        ON_ERROR = SKIP_FILE;, parameters: None
+[2026-05-13T17:42:34.125+0000] {sql.py:520} INFO - Rows affected: 3
+[2026-05-13T17:42:34.125+0000] {snowflake.py:477} INFO - Rows affected: 3
+[2026-05-13T17:42:34.126+0000] {snowflake.py:478} INFO - Snowflake query id: 01c45866-000c-c412-0000-8705000157ea
+[2026-05-13T17:42:35.110+0000] {logging_mixin.py:190} INFO - Loaded customers into RAW.CUSTOMERS
+[2026-05-13T17:42:35.114+0000] {connection.py:626} INFO - Snowflake Connector for Python Version: 4.5.0, Python Version: 3.12.9, Platform: Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2026-05-13T17:42:35.127+0000] {connection.py:1735} INFO - Connecting to GLOBAL Snowflake domain
+[2026-05-13T17:42:36.544+0000] {sql.py:511} INFO - Running statement: COPY INTO RAW.ACCOUNT
+        FROM @BANKING_STAGE/account
+        FILE_FORMAT = (TYPE = PARQUET)
+        MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
+        PATTERN='.*\.parquet'
+        ON_ERROR = SKIP_FILE;, parameters: None
+[2026-05-13T17:42:37.640+0000] {sql.py:520} INFO - Rows affected: 8
+[2026-05-13T17:42:37.641+0000] {snowflake.py:477} INFO - Rows affected: 8
+[2026-05-13T17:42:37.642+0000] {snowflake.py:478} INFO - Snowflake query id: 01c45866-000c-c3fd-0000-87050001391e
+[2026-05-13T17:42:39.344+0000] {logging_mixin.py:190} INFO - Loaded account into RAW.ACCOUNT
+[2026-05-13T17:42:39.345+0000] {connection.py:626} INFO - Snowflake Connector for Python Version: 4.5.0, Python Version: 3.12.9, Platform: Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2026-05-13T17:42:39.347+0000] {connection.py:1735} INFO - Connecting to GLOBAL Snowflake domain
+[2026-05-13T17:42:41.579+0000] {sql.py:511} INFO - Running statement: COPY INTO RAW.TRANSACTIONS
+        FROM @BANKING_STAGE/transactions
+        FILE_FORMAT = (TYPE = PARQUET)
+        MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
+        PATTERN='.*\.parquet'
+        ON_ERROR = SKIP_FILE;, parameters: None
+[2026-05-13T17:42:42.820+0000] {sql.py:520} INFO - Rows affected: 10
+[2026-05-13T17:42:42.820+0000] {snowflake.py:477} INFO - Rows affected: 10
+[2026-05-13T17:42:42.821+0000] {snowflake.py:478} INFO - Snowflake query id: 01c45866-000c-c3fd-0000-870500013926
+[2026-05-13T17:42:43.864+0000] {logging_mixin.py:190} INFO - Loaded transactions into RAW.TRANSACTIONS
+[2026-05-13T17:42:43.866+0000] {python.py:240} INFO - Done. Returned value was: None
+[2026-05-13T17:42:43.880+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-05-13T17:42:43.881+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=minio_to_snowflake, task_id=load_minio_to_snowflake, run_id=manual__2026-05-13T17:41:38.805186+00:00, execution_date=20260513T174138, start_date=20260513T174144, end_date=20260513T174243
+[2026-05-13T17:42:43.954+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-05-13T17:42:43.968+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-13T17:42:43.972+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

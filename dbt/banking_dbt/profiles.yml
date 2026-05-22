@@ -1,0 +1,17 @@
+
+
+banking_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: ps73851.af-south-1.aws
+      user: madeena
+      password: Titilayomadeena502
+
+      role: ACCOUNTADMIN
+      database: BANKING
+      warehouse: COMPUTE_WH
+      schema: analytics
+
+      threads: 4
